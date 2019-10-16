@@ -1,0 +1,10 @@
+<h1><%=@title%></h1>
+<h2>By: <%=@artist_name%></h2>
+<h3><%=@genre%></h3>
+<% if @released %>
+    <h3>Released: <%= @released_year %></h3>
+<%else%>
+    <h3>Note released yet</h3>
+<%end%>
+
+
