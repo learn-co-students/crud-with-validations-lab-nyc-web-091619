@@ -1,0 +1,6 @@
+<h1>Song:</h1>
+
+<h3><%= @song.title %></h3>
+<%= form_for @song, method: :delete do |f| %>
+  <%= f.submit "Delete Song" %>
+<% end %>
