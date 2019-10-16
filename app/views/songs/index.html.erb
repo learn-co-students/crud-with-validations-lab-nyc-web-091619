@@ -1,0 +1,40 @@
+<h1>🎵List of all the Songs available 🎵</h1>
+<!-- <ul>
+<% @songs.each do |song| %>
+<li>Title: <%= song.title %></li><br>
+<li>Artist Name: <%= song.artist_name %></li><br>
+<li>Release Year: <%= song.release_year %></li><br>
+<li>Genre: <%= song.genre %></li><br>
+<li><%= link_to "View", song_path(song) %></li><br>
+<li><%= link_to "Edit", edit_song_path(song) %></li><br>
+<li><%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %></li><br><br><br>
+<% end %>
+</ul> -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Genre</th>
+      <th>Artist name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.genre %></td>
+        <td><%= song.artist_name %></td>
+        <td>
+          <%= link_to 'View', song %> |
+          <%= link_to 'Edit', edit_song_path(song) %> |
+          <%= link_to 'Delete', song, method: :destroy, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
