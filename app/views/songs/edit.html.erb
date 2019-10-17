@@ -1,0 +1,16 @@
+<h1>Update Song</h1>
+
+<%= form_for @song do |f| %>
+Artist Name: <%= f.text_field :artist_name %> <br>
+Title: <%= f.text_field :title %> <br>
+Released <%= f.radio_button :released, :checked => true %>true <%= f.radio_button :released, :checked => false %> false <br>
+
+<br>
+Release Year: <%= f.text_field :release_year %> <br>
+Genre: <%= f.text_field :genre %> <br> <br> <br>
+
+
+<%= f.submit "Update Song"%>
+<%= button_to "delete", @song, :method => :delete %>
+    
+<% end %>
